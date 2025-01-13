@@ -1,4 +1,5 @@
-# Command line Rock-Scissor-Paper game in Javascript as TheOdinProject assignment
+# Rock-Scissor-Paper game in Javascript as TheOdinProject assignment
+
 
 ## Game algorithm 
 - Get the computer choice 
@@ -11,5 +12,7 @@ Comapre the humand choice and computer choice
 
 - Debug messages can be seen in console.log . 
 
-## Game controls 
-- Its a console game, so user input will be taken usign a prompt.
+## Game version
+- Main branch is Game with userInput from html buttons 
+- rps-prompt: This branch is having initial code using prompt as userInput. Prompt will ask for userInput 'rock|paper|scissors' for five times, and then will display the score in another prompt.
+
