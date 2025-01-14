@@ -64,6 +64,8 @@ function playRound(humanChoice, computerChoice) {
     }
     // total number of round played
     score.numRounds += 1;
+    score.humanMove = humanChoice;
+    score.computerMove = computerChoice;
     return score;
 }
 
@@ -75,10 +77,13 @@ let score = {
     tieScore: 0,
     roundWinner: '',
     finalWinner: '',
-    numRounds: 0
+    numRounds: 0,
+    humanMove: '',
+    computerMove: ''
 };
 let scoreText = '';
 
+let inputs = document.querySelector('#inputs');
 let results = document.querySelector('#results');
 let roundWinner = document.querySelector('#round-winner');
 let finalWinner = document.querySelector('#final-winner');
@@ -92,18 +97,22 @@ reset.addEventListener('click', () => {
         tieScore: 0,
         roundWinner: '',
         finalWinner: '',
-        numRounds: 0
+        numRounds: 0,
+        humanMove: '',
+        computerMove: ''
     };
     updateScore();
 });
 
 // function to update score
 function updateScore() {
+    inputs.textContent = `YourMove : ${score.humanMove} , ComputerMove: ${score.computerMove}, roundWinner: ${score.roundWinner}`;
     scoreText = `Score : human: ${score.humanScore}, computer: ${score.computerScore}, 
         tie: ${score.tieScore}, totalRounds: ${score.numRounds}`;
     results.textContent = scoreText;
-    roundWinner.textContent = `Current Round Winner : ${score.roundWinner}`;
     finalWinner.textContent = `Game Winner : ${score.finalWinner}`;
+    // roundWinner.textContent = `Current Round Winner : ${score.roundWinner}`;
+
 }
 
 //playGame using userInput from button 
